@@ -1,0 +1,96 @@
+/* Pallete 1 - RWB */
+:root {
+    --top-bar-bg-color: #E63946;
+    --top-bar-text-color: #FFFFFF;
+
+    --page-bg-color: #38618C;
+    --carousel-text-color: #FFFFFF;
+
+    --accordion-btn-color: #E63946;
+    --accordion-body-color: #38618C;
+    --accordion-text-color: #FFFFFF;
+}
+
+@font-face {
+    font-family: "RobotCrush";
+    src: url("fonts/Robot_Crush.ttf");
+}
+
+body {
+    background-color: var(--page-bg-color);
+}
+
+.blocky_text {
+    font-family: "RobotCrush";
+    font-size: 2rem;
+    /* margin-bottom: 0px ; */
+}
+
+.top_bar {
+    background-color: var(--top-bar-bg-color);
+    color: var(--top-bar-text-color);
+    /* text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; */
+    /* padding-bottom: 5px; */
+}
+
+.nav-link {
+    font-size: 1.5rem;
+}
+
+.carousel-item {
+    color: var(--carousel-text-color);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    /* background-color: var(--top-bar-bg-color); */
+}
+
+.carousel-item p {
+    margin-bottom: 5px;
+}
+
+#review_section {
+    margin: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+#review_carousel {
+    border-radius: 10px;
+    background-color: var(--top-bar-bg-color);
+}
+
+.section_header {
+    color: var(--carousel-text-color);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.major_section {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.accordion-button {
+    background-color: var(--accordion-btn-color) !important;
+    color: var(--accordion-text-color) !important;
+}
+
+.accordion-button::after {
+    color: var(--accordion-body-color);
+}
+
+.accordion-body {
+    background-color: var(--accordion-body-color);
+    color: var(--accordion-text-color);
+}
+
+#specials_section {
+    padding: 12px;
+}
+
+#specials_section .card {
+    background-color: var(--accordion-btn-color);
+    color: var(--accordion-text-color)
+}
+
+.btn {
+    margin-bottom: 4px;
+}
