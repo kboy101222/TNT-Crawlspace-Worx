@@ -1,5 +1,5 @@
 /* Pallete 1 - RWB */
-:root {
+/* :root {
     --top-bar-bg-color: #E63946;
     --top-bar-text-color: #FFFFFF;
 
@@ -8,6 +8,19 @@
 
     --accordion-btn-color: #E63946;
     --accordion-body-color: #38618C;
+    --accordion-text-color: #FFFFFF;
+} */
+
+/* Pallete 2 - Deeper RWB */
+:root {
+    --top-bar-bg-color: #DB162F;
+    --top-bar-text-color: #FFFFFF;
+
+    --page-bg-color: #2B4570;
+    --carousel-text-color: #FFFFFF;
+
+    --accordion-btn-color: #DB162F;
+    --accordion-body-color: #2B4570;
     --accordion-text-color: #FFFFFF;
 }
 
@@ -64,7 +77,7 @@ body {
 }
 
 .major_section {
-    margin-top: 15px;
+    /* margin-top: 15px; */
     margin-bottom: 15px;
 }
 
@@ -93,4 +106,9 @@ body {
 
 .btn {
     margin-bottom: 4px;
+}
+
+#content_section {
+    background-image: url("images/nashville_evening_full.jpg");
+    background-size:cover;
 }
