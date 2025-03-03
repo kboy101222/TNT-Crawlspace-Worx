@@ -22,6 +22,8 @@
     --accordion-btn-color: #DB162F;
     --accordion-body-color: #2B4570;
     --accordion-text-color: #FFFFFF;
+
+    --secondary-pink-color: #c947bf;    
 }
 
 @font-face {
@@ -58,6 +60,7 @@ body {
 
 .carousel-item p {
     margin-bottom: 5px;
+    opacity: 1 !important;
 }
 
 #review_section {
@@ -69,6 +72,11 @@ body {
 #review_carousel {
     border-radius: 10px;
     background-color: var(--top-bar-bg-color);
+    opacity: 0.5;
+}
+
+#review_carousel p {
+    opacity: 1.0 !important;
 }
 
 .section_header {
@@ -109,6 +117,7 @@ body {
 }
 
 #content_section {
-    background-image: url("images/nashville_evening_full.jpg");
+    /* background-image: url("images/nashville_evening_full.jpg"); */
+    background-image: url("images/nashville_skyline_fireworks.jpg");
     background-size:cover;
 }
