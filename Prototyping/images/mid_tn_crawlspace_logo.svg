@@ -3,8 +3,8 @@
 
 <svg
    width="136.952mm"
-   height="21.952412mm"
-   viewBox="0 0 136.95199 21.952412"
+   height="24.952mm"
+   viewBox="0 0 136.95199 24.952"
    version="1.1"
    id="svg1"
    inkscape:export-filename="TN_seal.svg"
@@ -27,9 +27,9 @@
      inkscape:pagecheckerboard="true"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.4378368"
-     inkscape:cx="297.66939"
-     inkscape:cy="173.52456"
+     inkscape:zoom="2.0334083"
+     inkscape:cx="221.7951"
+     inkscape:cy="96.143996"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
      inkscape:window-x="-8"
@@ -44,6 +44,120 @@
        width="465.97778"
        height="153.00763"
        id="rect4" />
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter37"
+       x="-0.043076922"
+       y="-0.045025333"
+       width="1.0919991"
+       height="1.0881023">
+      <feFlood
+         result="flood"
+         in="SourceGraphic"
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         id="feFlood36" />
+      <feGaussianBlur
+         result="blur"
+         in="SourceGraphic"
+         stdDeviation="1.400000"
+         id="feGaussianBlur36" />
+      <feOffset
+         result="offset"
+         in="blur"
+         dx="0.455927"
+         dy="-0.151976"
+         id="feOffset36" />
+      <feComposite
+         result="comp1"
+         operator="in"
+         in="flood"
+         in2="offset"
+         id="feComposite36" />
+      <feComposite
+         result="comp2"
+         operator="over"
+         in="SourceGraphic"
+         in2="comp1"
+         id="feComposite37" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter39"
+       x="-0.034677815"
+       y="-0.27452076"
+       width="1.0737177"
+       height="1.5379943">
+      <feFlood
+         result="flood"
+         in="SourceGraphic"
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         id="feFlood37" />
+      <feGaussianBlur
+         result="blur"
+         in="SourceGraphic"
+         stdDeviation="1.400000"
+         id="feGaussianBlur37" />
+      <feOffset
+         result="offset"
+         in="blur"
+         dx="0.455927"
+         dy="-0.151976"
+         id="feOffset37" />
+      <feComposite
+         result="comp1"
+         operator="in"
+         in="flood"
+         in2="offset"
+         id="feComposite38" />
+      <feComposite
+         result="comp2"
+         operator="over"
+         in="SourceGraphic"
+         in2="comp1"
+         id="feComposite39" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter41"
+       x="-0.032130961"
+       y="-0.53054039"
+       width="1.0683199"
+       height="2.0396481">
+      <feFlood
+         result="flood"
+         in="SourceGraphic"
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         id="feFlood39" />
+      <feGaussianBlur
+         result="blur"
+         in="SourceGraphic"
+         stdDeviation="1.400000"
+         id="feGaussianBlur39" />
+      <feOffset
+         result="offset"
+         in="blur"
+         dx="0.455927"
+         dy="-0.151976"
+         id="feOffset39" />
+      <feComposite
+         result="comp1"
+         operator="in"
+         in="flood"
+         in2="offset"
+         id="feComposite40" />
+      <feComposite
+         result="comp2"
+         operator="over"
+         in="SourceGraphic"
+         in2="comp1"
+         id="feComposite41" />
+    </filter>
   </defs>
   <g
      inkscape:label="Layer 1"
@@ -51,8 +165,9 @@
      id="layer1"
      transform="translate(-105.30817,-106.10192)">
     <g
-       transform="matrix(0.28144118,0,0,0.28144118,116.28438,117.07813)"
-       id="g11">
+       transform="matrix(0.28144118,0,0,0.28144118,116.28438,119.19481)"
+       id="g11"
+       style="filter:url(#filter37)">
       <circle
          fill="#ffffff"
          id="circle4"
@@ -108,27 +223,16 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'Robot Crush';-inkscape-font-specification:'Robot Crush, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:148.11;display:inline;opacity:0.84;fill:#ffffff;stroke:#1a1a1a;stroke-width:0.529167;stroke-linecap:butt;stroke-dasharray:none;paint-order:stroke fill markers"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:'Robot Crush';-inkscape-font-specification:'Robot Crush, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:148.11;display:inline;opacity:0.84;fill:#ffffff;stroke:#1a1a1a;stroke-width:0.529167;stroke-linecap:butt;stroke-dasharray:none;paint-order:stroke fill markers;filter:url(#filter39)"
        x="132.63298"
        y="116.38126"
        id="text1"
-       transform="translate(-1.4046321,1.6253036)"><tspan
+       transform="matrix(1.0602899,0,0,1.0602899,-12.854112,0.52413563)"><tspan
          x="132.63298"
          y="116.38126"
-         id="tspan4"><tspan
+         id="tspan2"><tspan
            style="font-family:'Billion Dreams';-inkscape-font-specification:'Billion Dreams, Normal'"
            id="tspan1">Middle TN Crawlspace</tspan></tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;opacity:0.84;fill:#ffffff;stroke:#1a1a1a;stroke-width:0.5;stroke-dasharray:none;paint-order:stroke fill markers"
-       x="127.78173"
-       y="126.10564"
-       id="text2"><tspan
-         sodipodi:role="line"
-         id="tspan2"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#1a1a1a;stroke-width:0.5;stroke-dasharray:none;paint-order:stroke fill markers"
-         x="127.78173"
-         y="126.10564">A full service crawlspace company</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:'Robot Crush';-inkscape-font-specification:'Robot Crush';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;opacity:0.84;fill:#ffffff;stroke:#1a1a1a;stroke-width:0.529167;stroke-dasharray:none;paint-order:stroke fill markers"
@@ -145,5 +249,62 @@
        transform="matrix(0.26458333,0,0,0.26458333,105.30817,106.10192)"
        id="text4"
        style="font-size:53.3333px;font-family:'Billion Dreams';-inkscape-font-specification:'Billion Dreams';text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect4);display:inline;opacity:0.84;fill:#000000" />
+    <g
+       transform="matrix(0.28144118,0,0,0.28144118,116.28438,119.19481)"
+       id="g60"
+       style="filter:url(#filter37)">
+      <circle
+         fill="#ffffff"
+         id="circle53"
+         r="39"
+         cy="0"
+         cx="0" />
+      <circle
+         fill="#002d65"
+         id="circle54"
+         r="36"
+         cy="0"
+         cx="0" />
+      <g
+         id="g58"
+         transform="rotate(18,-58.402202,-9.25)"
+         fill="#ffffff">
+        <g
+           id="g54">
+          <path
+             id="path54"
+             d="M 0,-17 V 0 h 8.5"
+             transform="rotate(18,0,-17)" />
+          <use
+             xlink:href="#t"
+             transform="scale(-1,1)"
+             id="use54" />
+        </g>
+        <use
+           xlink:href="#c"
+           transform="rotate(72)"
+           id="use55" />
+        <use
+           xlink:href="#c"
+           transform="rotate(144)"
+           id="use56" />
+        <use
+           xlink:href="#c"
+           transform="rotate(-144)"
+           id="use57" />
+        <use
+           xlink:href="#c"
+           transform="rotate(-72)"
+           id="use58" />
+      </g>
+      <use
+         xlink:href="#s"
+         transform="rotate(120)"
+         id="use59" />
+      <use
+         xlink:href="#s"
+         transform="rotate(-120)"
+         id="use60" />
+    </g>
   </g>
 </svg>
