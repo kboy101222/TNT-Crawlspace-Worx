@@ -23,7 +23,15 @@
     --accordion-body-color: #2B4570;
     --accordion-text-color: #FFFFFF;
 
-    --secondary-pink-color: #c947bf;    
+    --translucent-red-color: rgba(219, 22, 47, 0.5);
+    --translucent-blue-color: rgba(43, 69, 112, 1);
+
+    --secondary-pink-color: #c947bf;
+
+    --bs-body-bg: rgba(0,0,0,0);
+
+    --mid-tn-crawlspace-logo: url("images/mid_tn_crawlspace_logo.svg");
+    --tnt-basement-worx-logo: url("images/full_logo.svg")
 }
 
 @font-face {
@@ -31,8 +39,11 @@
     src: url("fonts/Robot_Crush.ttf");
 }
 
-body {
+body, html {
     background-color: var(--page-bg-color);
+    height: 100%;
+    /* background-image: url("images/nashville_skyline_fireworks.jpg");
+    background-size: auto; */
 }
 
 .blocky_text {
@@ -71,8 +82,8 @@ body {
 
 #review_carousel {
     border-radius: 10px;
-    background-color: var(--top-bar-bg-color);
-    opacity: 0.5;
+    background-color: var(--translucent-red-color);
+    /* opacity: 0.5; */
 }
 
 #review_carousel p {
@@ -90,7 +101,7 @@ body {
 }
 
 .accordion-button {
-    background-color: var(--accordion-btn-color) !important;
+    background-color: var(--translucent-red-color) !important;
     color: var(--accordion-text-color) !important;
 }
 
@@ -99,8 +110,10 @@ body {
 }
 
 .accordion-body {
-    background-color: var(--accordion-body-color);
+    background-color: var(--translucent-blue-color);
     color: var(--accordion-text-color);
+    /* -webkit-text-stroke: 1px black; */
+    -webkit-text-fill-color: white;
 }
 
 #specials_section {
@@ -108,7 +121,7 @@ body {
 }
 
 #specials_section .card {
-    background-color: var(--accordion-btn-color);
+    background-color: var(--translucent-red-color);
     color: var(--accordion-text-color)
 }
 
@@ -120,4 +133,9 @@ body {
     /* background-image: url("images/nashville_evening_full.jpg"); */
     background-image: url("images/nashville_skyline_fireworks.jpg");
     background-size:cover;
+
+    height:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
