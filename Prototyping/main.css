@@ -75,6 +75,10 @@ body, html {
     opacity: 1 !important;
 }
 
+/* .carousel-item .review_text {
+    max-height: 250px;
+} */
+
 #review_section {
     margin: auto;
     padding-left: 12px;
@@ -141,4 +145,9 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.carousel-inner {
+    width: 80%;
+    margin: auto;
 }
