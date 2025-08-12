@@ -1,0 +1,20 @@
+[
+    {
+        "reviewText": "Hello World, this is a test review!",
+        "reviewer": "Testy McTesterson",
+        "rating": 5,
+        "reviewSource": "HomeAdvisor"
+    },
+    {
+        "reviewText": "Hello World, this is another test review!",
+        "reviewer": "Testy McTesterson the Second",
+        "rating": 3.5,
+        "reviewSource": "Google"
+    },
+    {
+        "reviewText": "Hello World, this is the last test review!",
+        "reviewer": "Testy McTesterson the Second Jr.",
+        "rating": 4,
+        "reviewLink": "https://google.com"
+    }
+]

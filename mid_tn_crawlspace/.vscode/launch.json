@@ -1,0 +1,34 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+
+
+        {
+            "name": "mid_tn_crawlspace",
+            "request": "launch",
+            "type": "jaspr"
+        },
+        {
+            "name": "mid_tn_cs_firefox",
+            "request": "launch",
+            "type": "firefox",
+            "file": "${workspaceFolder}/index.html",
+            "pathMappings": [{
+                "url": "http://localhost:8080",
+                "path": "${workspaceFolder}"
+            }],
+        },
+        {
+            "name": "mid_tn_crawlspace (release mode)",
+            "request": "launch",
+            "type": "jaspr",
+            "args": [
+                "--release"
+            ]
+        }
+    ]
+}
