@@ -1,7 +1,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
+/* @plugin "@tailwindcss/typography"; */
 
 @plugin "./daisyui.js" {
     themes: red --default;
@@ -57,13 +57,17 @@
   --slide-size: 100%;
 
   display: flex;
-  
+  max-height: 450px;
+  overflow: scroll;
 }
 .embla__viewport {
   overflow: hidden;
 }
 .embla__container {
   display: flex;
+  /* grid-auto-flow: row;
+  grid-auto-rows: var(--slide-size);
+  height: var(--slide-height); */
   touch-action: pan-y pinch-zoom;
   margin-left: calc(var(--slide-spacing) * -1);
 }
@@ -73,6 +77,9 @@
   min-width: 0;
   padding-left: var(--slide-spacing);
   text-align: center;
+
+  max-height: 450px;
+  overflow: scroll;
 }
 
 .embla__slide div {

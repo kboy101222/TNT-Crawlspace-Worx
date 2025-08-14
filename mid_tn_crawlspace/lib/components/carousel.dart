@@ -1,21 +1,38 @@
 import 'package:jaspr/jaspr.dart';
+import 'carousel_options.dart';
 
 class EmblaPlugin extends StatelessComponent {
-  const EmblaPlugin({super.key, this.autoplayPlugin = false});
+  const EmblaPlugin(
+      {super.key,
+      this.autoPlayPlugin = false,
+      this.autoHeightPlugin = false,
+      this.autoScrollPlugin = false,
+      this.classNamesPlugin = false});
 
-  final bool autoplayPlugin;
+  // Properties List
+  final bool autoPlayPlugin;
+  final bool autoHeightPlugin;
+  final bool autoScrollPlugin;
+  final bool classNamesPlugin;
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    if (autoplayPlugin) {
-      yield div([
-        script(src: "https://unpkg.com/embla-carousel/embla-carousel.umd.js"),
-        script(
-            src:
-                "https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"),
-      ]);
-    }
     yield script(src: "https://unpkg.com/embla-carousel/embla-carousel.umd.js");
+    if (autoPlayPlugin) {
+      yield script(
+          src:
+              "https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js");
+    }
+    if (autoHeightPlugin) {
+      yield script(
+          src:
+              "https://unpkg.com/embla-carousel-auto-height/embla-carousel-auto-height.umd.js");
+    }
+    if (classNamesPlugin) {
+      yield script(
+          src:
+              "https://unpkg.com/embla-carousel-class-names/embla-carousel-class-names.umd.js");
+    }
   }
 }
 
@@ -42,7 +59,10 @@ class Carousel extends StatelessComponent {
     super.key,
     required this.children,
     this.loop = true,
-    this.autoplay = false,
+    this.autoPlayPlugin = false,
+    this.autoScrollPlugin = false,
+    this.autoHeightPlugin = false,
+    this.classNamePlugin = false,
     this.navButtons = false,
     this.className = "embla",
     this.classes = "",
@@ -51,14 +71,22 @@ class Carousel extends StatelessComponent {
     this.width = "100vw",
     List<Component>? prevButtonChildren,
     List<Component>? nextButtonChildren,
-    AutoplayOptions? autoPlayOptions,
+    AutoPlayOptions? autoPlayOptions,
+    AutoScrollSettings? autoScrollSettings,
+    ClassNameSettings? classNameSettings,
   })  : prevButtonChildren = prevButtonChildren ?? const [Text("Prev")],
         nextButtonChildren = nextButtonChildren ?? const [Text("Next")],
-        autoplayOptions = autoPlayOptions ?? AutoplayOptions();
+        autoPlayOptions = autoPlayOptions ?? AutoPlayOptions(),
+        autoScrollSettings = autoScrollSettings ?? AutoScrollSettings(),
+        classNameSettings = classNameSettings ?? ClassNameSettings();
 
+  // Properties List
   final List<Component> children;
   final bool loop;
-  final bool autoplay;
+  final bool autoPlayPlugin;
+  final bool autoScrollPlugin;
+  final bool autoHeightPlugin;
+  final bool classNamePlugin;
   final bool navButtons;
   final String className;
   final String classes;
@@ -66,34 +94,44 @@ class Carousel extends StatelessComponent {
   final String width;
   final List<Component> prevButtonChildren;
   final List<Component> nextButtonChildren;
-  final AutoplayOptions autoplayOptions;
+  final AutoPlayOptions autoPlayOptions;
+  final AutoScrollSettings autoScrollSettings;
+  final ClassNameSettings classNameSettings;
   final String? carouselHeight;
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    String autoplayPlugin = "const ${className}_plugins = [];";
-    String autoplaySettings = "";
-    if (autoplay) {
-      autoplayPlugin = "const ${className}_plugins = [EmblaCarouselAutoplay()]";
-      for (String setting in autoplayOptions.keys) {
-        autoplaySettings += "$setting: ${autoplayOptions[setting]},";
-      }
+    String scripting = "";
+    String pluginList = "const ${className}_plugins = [";
+    if (autoPlayPlugin) {
+      // scripting += "import('/embla-carousel-autoplay.js')\n";
+      pluginList += "EmblaCarouselAutoplay({$autoPlayOptions}),";
     }
-    String scripting = '''
-        const ${className}_emblaNode = document.querySelector(".$className")
-        const ${className}_viewportNode = ${className}_emblaNode.querySelector('.${className}__viewport')
-        const ${className}_OPTIONS = { loop: $loop, $autoplaySettings }
-        $autoplayPlugin
-        const ${className}_emblaApi = EmblaCarousel(${className}_viewportNode, ${className}_OPTIONS, ${className}_plugins)
+    if (autoScrollPlugin) {
+      pluginList += "EmblaCarouselAutoScroll({$autoScrollSettings}),";
+    }
+    if (autoHeightPlugin) {
+      pluginList += "EmblaCarouselAutoHeight(),";
+    }
+    if (classNamePlugin) {
+      pluginList += "EmblaCarouselClassNames({$classNameSettings}),";
+    }
+    pluginList += "]";
+
+    scripting += '''
+const ${className}_emblaNode = document.querySelector(".$className")
+const ${className}_viewportNode = ${className}_emblaNode.querySelector('.${className}__viewport')
+const ${className}_OPTIONS = {loop: $loop}
+$pluginList
+const ${className}_emblaApi = EmblaCarousel(${className}_viewportNode, ${className}_OPTIONS, ${className}_plugins)
       ''';
 
     if (navButtons) {
       scripting += '''
-      const ${className}_prevButtonNode = ${className}_emblaNode.querySelector('.${className}__prev')
-      const ${className}_nextButtonNode = ${className}_emblaNode.querySelector('.${className}__next')
-
-      ${className}_prevButtonNode.addEventListener('click', ${className}_emblaApi.scrollPrev, false)
-      ${className}_nextButtonNode.addEventListener('click', ${className}_emblaApi.scrollNext, false)
+const ${className}_prevButtonNode = ${className}_emblaNode.querySelector('.${className}__prev')
+const ${className}_nextButtonNode = ${className}_emblaNode.querySelector('.${className}__next')
+${className}_prevButtonNode.addEventListener('click', ${className}_emblaApi.scrollPrev, false)
+${className}_nextButtonNode.addEventListener('click', ${className}_emblaApi.scrollNext, false)
       ''';
       yield div([
         div(classes: "$className $classes rounded-md w-[100vw] md:w-[40vw]", [
@@ -107,12 +145,13 @@ class Carousel extends StatelessComponent {
                   "${className}__next btn btn-ghost self-center ${carouselHeight ?? ""}",
               nextButtonChildren)
         ]),
-        script(content: scripting)
+        script(content: scripting, attributes: {"type": "module"})
       ]);
     } else {
       yield div([
         div(
-            classes: "$className $classes rounded-md w-[100vw] md:w-[40vw]",
+            classes:
+                "$className $classes rounded-md w-[$width] md:w-[$mdWidth]",
             [div(classes: "${className}__viewport", children)]),
         script(content: scripting)
       ]);
@@ -150,57 +189,5 @@ class CarouselNavButton extends StatelessComponent {
       throw FormatException(
           'buttonType must be one of the following: "prev", "next"');
     }
-  }
-}
-
-class AutoplayOptions {
-  AutoplayOptions({
-    this.delay = 4000,
-    this.jump = false,
-    this.playOnInit = true,
-    this.stopOnInteraction = true,
-    this.stopOnMouseEnter = false,
-    this.stopOnFocusIn = true,
-    this.stopOnLastSnap = false,
-  });
-
-  final int delay;
-  final bool jump;
-  final bool playOnInit;
-  final bool stopOnInteraction;
-  final bool stopOnMouseEnter;
-  final bool stopOnFocusIn;
-  final bool stopOnLastSnap;
-
-  final List<String> keys = [
-    "delay",
-    "jump",
-    "playOnInit",
-    "stopOnInteraction",
-    "stopOnMouseEnter",
-    "stopOnFocusIn",
-    "stopOnLastSnap"
-  ];
-
-  Map getSettings() {
-    Map outMap = {};
-
-    outMap["delay"] = delay;
-    outMap["jump"] = jump;
-    outMap["playOnInit"] = playOnInit;
-    outMap["stopOnInteraction"] = stopOnInteraction;
-    outMap["stopOnMouseEnter"] = stopOnMouseEnter;
-    outMap["stopOnFocusIn"] = stopOnFocusIn;
-    outMap["stopOnLastSnap"] = stopOnLastSnap;
-
-    return outMap;
-  }
-
-  operator [](Object key) {
-    Map outMap = getSettings();
-    if (outMap.containsKey(key.toString())) {
-      return outMap[key.toString()];
-    }
-    return "";
   }
 }

@@ -3,23 +3,24 @@ import 'dart:math';
 import 'package:jaspr/server.dart';
 import 'icons.dart';
 import 'carousel.dart';
-import '../review_list.dart';
 
 class Review extends StatelessComponent {
-  const Review({
+  Review({
     super.key,
     required this.reviewText,
     required this.reviewer,
-    required this.rating,
+    double? rating,
     this.reviewSource = "",
     this.reviewLink = "",
-  });
+    this.slideClass = "",
+  }) : rating = rating ?? 5.0;
 
   final String reviewText;
   final String reviewer;
   final double rating;
   final String reviewSource;
   final String reviewLink;
+  final String slideClass;
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
@@ -41,25 +42,29 @@ class Review extends StatelessComponent {
     }
     components.add(formattedReviewSource);
 
-    yield Slide(children: [div(classes: "", components)]);
+    yield Slide(children: [div(classes: slideClass, components)]);
   }
 }
 
 class ReviewSection extends StatelessComponent {
-  ReviewSection(
-      {super.key,
-      required this.reviewFile,
-      this.classes = "",
-      this.maxReviews = 20});
+  ReviewSection({
+    super.key,
+    required this.reviewList,
+    this.classes = "",
+    this.slideClasses = "",
+    this.maxReviews = 20,
+  });
 
-  final String reviewFile;
+  final List<dynamic> reviewList;
   final String classes;
+  final String slideClasses;
   final int maxReviews;
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
     print("Compiling review section");
     List<Component> reviewSection = [];
+    reviewList.shuffle();
 
     for (int i = 0; i < min(reviewList.length, maxReviews); i++) {
       Map review = reviewList[i];
@@ -68,12 +73,12 @@ class ReviewSection extends StatelessComponent {
       String reviewSource =
           review.containsKey("reviewSource") ? review["reviewSource"] : "";
       reviewSection.add(Review(
-        reviewText: review["reviewText"],
-        reviewer: review["reviewer"],
-        rating: review["rating"].toDouble(),
-        reviewLink: reviewLink,
-        reviewSource: reviewSource,
-      ));
+          reviewText: review["reviewText"],
+          reviewer: review["reviewer"],
+          rating: review["rating"],
+          reviewLink: reviewLink,
+          reviewSource: reviewSource,
+          slideClass: slideClasses));
     }
 
     yield div(classes: "embla__container $classes", reviewSection);

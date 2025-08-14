@@ -1,4 +1,6 @@
 import 'package:jaspr/jaspr.dart';
+import 'package:mid_tn_crawlspace/components/carousel_options.dart';
+import 'package:mid_tn_crawlspace/review_list.dart';
 import '../components/icons.dart';
 import '../components/carousel.dart';
 import '../components/review.dart';
@@ -38,7 +40,9 @@ class HomeState extends State<Home> {
         classes:
             "content-area flex flex-col grow items-center bg-[url(/images/nashville_skyline_fireworks.jpg)]",
         [
-          EmblaPlugin(autoplayPlugin: true),
+          EmblaPlugin(
+            autoPlayPlugin: true,
+          ),
           p(
               classes: "text-[2rem] font-outline font-bold",
               [text("Contact Us")]),
@@ -76,7 +80,7 @@ class HomeState extends State<Home> {
             ]),
           ]),
           Carousel(
-              autoplay: true,
+              autoPlayPlugin: true,
               classes: "mt-5 text-base-content bg-base-100/50 backdrop-blur-sm",
               navButtons: true,
               carouselHeight: "24rem",
@@ -88,9 +92,9 @@ class HomeState extends State<Home> {
               ],
               children: [
                 ReviewSection(
-                  reviewFile: "web/reviews.json",
-                  // classes: "flex w-[100%] rounded-md w-[100vw] md:w-[40vw]",
-                )
+                    reviewList: reviewList, slideClasses: "max-h-[200px]"
+                    // classes: "flex w-[100%] rounded-md w-[100vw] md:w-[40vw]",
+                    )
               ])
         ]);
   }
