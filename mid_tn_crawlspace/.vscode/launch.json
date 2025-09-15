@@ -8,20 +8,20 @@
 
 
         {
-            "name": "mid_tn_crawlspace",
+            "name": "mid_tn_crawlspace (Jaspr)",
             "request": "launch",
             "type": "jaspr"
         },
-        {
-            "name": "mid_tn_cs_firefox",
-            "request": "launch",
-            "type": "firefox",
-            "file": "${workspaceFolder}/index.html",
-            "pathMappings": [{
-                "url": "http://localhost:8080",
-                "path": "${workspaceFolder}"
-            }],
-        },
+        // {
+        //     "name": "mid_tn_cs_firefox",
+        //     "request": "launch",
+        //     "type": "firefox",
+        //     "file": "${workspaceFolder}/index.html",
+        //     "pathMappings": [{
+        //         "url": "http://localhost:8080",
+        //         "path": "${workspaceFolder}"
+        //     }],
+        // },
         {
             "name": "mid_tn_crawlspace (release mode)",
             "request": "launch",

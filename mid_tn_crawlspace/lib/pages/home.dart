@@ -1,4 +1,5 @@
 import 'package:jaspr/jaspr.dart';
+import 'package:mid_tn_crawlspace/components/accordion.dart';
 import 'package:mid_tn_crawlspace/components/carousel_options.dart';
 import 'package:mid_tn_crawlspace/review_list.dart';
 import '../components/icons.dart';
@@ -95,6 +96,41 @@ class HomeState extends State<Home> {
                     reviewList: reviewList, slideClasses: "max-h-[200px]"
                     // classes: "flex w-[100%] rounded-md w-[100vw] md:w-[40vw]",
                     )
+              ]),
+          p(
+              classes: "text-[2rem] font-outline font-bold",
+              [text("Our Services")]),
+          JoinedAccordion(
+              classes: "backdrop-blur-sm bg-base-100/50 mt-[10px] w-[90vw]",
+              children: [
+                JoinedAccordionSection(
+                    title: "Full Encapsulations with Dehumidifier",
+                    content:
+                        "Seal up your basement with vapor barriers, turning it into a cleaner and more energy efficient space in your home. Also includes a dehumidifier service.",
+                    name: "servicesAccordion",
+                    startOpened: true,
+                    toggleType: InputType.radio),
+                JoinedAccordionSection(
+                    title: "Partial Encapsulation",
+                    content:
+                        "The same as our Full Encapsulation, but without the dehumidifier.",
+                    name: "servicesAccordion",
+                    startOpened: false,
+                    toggleType: InputType.radio),
+                JoinedAccordionSection(
+                    title: "Interior and Exterior Drain Systems",
+                    content:
+                        "A French Drain for your basement. It help to move water out of your basement faster and without causing excessive damage.",
+                    name: "servicesAccordion",
+                    startOpened: false,
+                    toggleType: InputType.radio),
+                JoinedAccordionSection(
+                    title: "Sump Pump Systems",
+                    content:
+                        "Sump Pumps pump fluids and waste from the lower parts of your home, such as your basement, into your sewer line, helping to prevent waste water from flooding your basement.",
+                    name: "servicesAccordion",
+                    startOpened: false,
+                    toggleType: InputType.radio)
               ])
         ]);
   }

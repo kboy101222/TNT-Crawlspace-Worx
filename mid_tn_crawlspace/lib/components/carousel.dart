@@ -159,6 +159,8 @@ ${className}_nextButtonNode.addEventListener('click', ${className}_emblaApi.scro
   }
 }
 
+// class
+
 class Slide extends StatelessComponent {
   const Slide(
       {super.key,

@@ -1,5 +1,3 @@
-import 'package:jaspr/ui.dart';
-
 abstract interface class Settings {
   Map<String, dynamic> get properties;
 

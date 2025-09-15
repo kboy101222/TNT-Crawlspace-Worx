@@ -67,7 +67,11 @@ class ReviewSection extends StatelessComponent {
     reviewList.shuffle();
 
     for (int i = 0; i < min(reviewList.length, maxReviews); i++) {
+      // Necessary due to some reviews not having a star rating (thanks HA)
       Map review = reviewList[i];
+      var rating = review["rating"];
+      rating ??= 5.0;
+      rating = rating.toDouble();
       String reviewLink =
           review.containsKey("reviewLink") ? review["reviewLink"] : "";
       String reviewSource =
@@ -75,7 +79,7 @@ class ReviewSection extends StatelessComponent {
       reviewSection.add(Review(
           reviewText: review["reviewText"],
           reviewer: review["reviewer"],
-          rating: review["rating"],
+          rating: rating,
           reviewLink: reviewLink,
           reviewSource: reviewSource,
           slideClass: slideClasses));
