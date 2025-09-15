@@ -39,7 +39,7 @@ class HomeState extends State<Home> {
   Iterable<Component> build(BuildContext context) sync* {
     yield div(
         classes:
-            "content-area flex flex-col grow items-center bg-[url(/images/nashville_skyline_fireworks.jpg)]",
+            "content-area flex flex-col grow items-center bg-[url(images/nashville_skyline_fireworks.jpg)]",
         [
           EmblaPlugin(
             autoPlayPlugin: true,
