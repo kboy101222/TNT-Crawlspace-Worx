@@ -1,7 +1,7 @@
 import 'package:jaspr/jaspr.dart';
-import 'package:mid_tn_crawlspace/components/accordion.dart';
-import 'package:mid_tn_crawlspace/components/carousel_options.dart';
-import 'package:mid_tn_crawlspace/review_list.dart';
+import '../components/accordion.dart';
+import '../components/carousel_options.dart';
+import '../review_list.dart';
 import '../components/icons.dart';
 import '../components/carousel.dart';
 import '../components/review.dart';

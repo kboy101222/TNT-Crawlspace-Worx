@@ -5,7 +5,7 @@
 // Generated with jaspr_builder
 
 import 'package:jaspr/jaspr.dart';
-import 'package:mid_tn_crawlspace/pages/home.dart' as prefix0;
+import 'pages/home.dart' as prefix0;
 
 /// Default [JasprOptions] for use with your jaspr project.
 ///
@@ -24,6 +24,6 @@ import 'package:mid_tn_crawlspace/pages/home.dart' as prefix0;
 /// }
 /// ```
 JasprOptions get defaultJasprOptions => JasprOptions(
-  clients: {prefix0.Home: ClientTarget<prefix0.Home>('pages/home')},
-  styles: () => [],
-);
+      clients: {prefix0.Home: ClientTarget<prefix0.Home>('pages/home')},
+      styles: () => [],
+    );

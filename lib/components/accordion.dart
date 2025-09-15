@@ -1,7 +1,7 @@
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
 import 'package:jaspr/server.dart';
-import 'package:mid_tn_crawlspace/components/joined.dart';
+import 'joined.dart';
 
 class JoinedAccordion extends StatelessComponent {
   ///Creates a DaisyUI Accordion Element
