@@ -23,6 +23,7 @@ void main() {
   // [Document] renders the root document structure (<html>, <head> and <body>)
   // with the provided parameters and components.
   runApp(Document(
+    base: 'TNT-Crawlspace-Worx',
     title: 'Middle TN Crawlspace',
     head: [
       link(href: 'styles.css', rel: 'stylesheet'),
