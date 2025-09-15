@@ -33,8 +33,19 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Download TailwindCSS
+        run: |
+          curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64
+          chmod +x tailwindcss-linux-x64
+          mv tailwindcss-linux-x64 /usr/local/bin/tailwindcss
+          npm install @tailwindcss/typography daisyui@latest
+          tailwindcss -h
       - name: 'Setup Dart'
         uses: dart-lang/setup-dart@v1.3
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+      - name: 'Setup npm'
+        uses: actions/setup-node@v4
       - name: 'Build Jaspr'
         run: |
           dart pub global activate jaspr_cli
