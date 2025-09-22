@@ -1,6 +1,6 @@
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
-import 'package:jaspr/server.dart';
+import 'package:jaspr/jaspr.dart';
 import 'joined.dart';
 
 class JoinedAccordion extends StatelessComponent {

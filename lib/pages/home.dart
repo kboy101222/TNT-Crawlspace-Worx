@@ -1,6 +1,5 @@
 import 'package:jaspr/jaspr.dart';
 import '../components/accordion.dart';
-import '../components/carousel_options.dart';
 import '../review_list.dart';
 import '../components/icons.dart';
 import '../components/carousel.dart';
@@ -106,7 +105,7 @@ class HomeState extends State<Home> {
                 JoinedAccordionSection(
                     title: "Full Encapsulations with Dehumidifier",
                     content:
-                        "Seal up your basement with vapor barriers, turning it into a cleaner and more energy efficient space in your home. Also includes a dehumidifier service.",
+                        "Seal up your crawlspace with vapor barriers, turning it into a cleaner and more energy efficient space in your home. Also includes a dehumidifier service.",
                     name: "servicesAccordion",
                     startOpened: true,
                     toggleType: InputType.radio),
@@ -120,14 +119,28 @@ class HomeState extends State<Home> {
                 JoinedAccordionSection(
                     title: "Interior and Exterior Drain Systems",
                     content:
-                        "A French Drain for your basement. It help to move water out of your basement faster and without causing excessive damage.",
+                        "A French Drain for your crawlspace. It help to move water out of your basement faster and without causing excessive damage.",
                     name: "servicesAccordion",
                     startOpened: false,
                     toggleType: InputType.radio),
                 JoinedAccordionSection(
                     title: "Sump Pump Systems",
                     content:
-                        "Sump Pumps pump fluids and waste from the lower parts of your home, such as your basement, into your sewer line, helping to prevent waste water from flooding your basement.",
+                        "Sump Pumps pump fluids and waste from the lower parts of your home, such as your crawlspace, into your sewer line, helping to prevent waste water from flooding your home. Can be setup with or without a battery backup",
+                    name: "servicesAccordion",
+                    startOpened: false,
+                    toggleType: InputType.radio),
+                JoinedAccordionSection(
+                    title: "Fungus Treatments",
+                    content:
+                        "Seal up your crawlspace with a specialized formula that kills fungus and prevents them from growing.",
+                    name: "servicesAccordion",
+                    startOpened: false,
+                    toggleType: InputType.radio),
+                JoinedAccordionSection(
+                    title: "Vapor Barriers",
+                    content:
+                        "Professionally installed Vapor Barriers help to reduce the moisture levels in your crawlspace, making them substantially more efficient.",
                     name: "servicesAccordion",
                     startOpened: false,
                     toggleType: InputType.radio)
