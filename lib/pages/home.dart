@@ -47,14 +47,17 @@ class HomeState extends State<Home> {
               classes: "text-[2rem] font-outline font-bold",
               [text("Contact Us")]),
           div(classes: "lg:join-horizontal justify-center flex flex-col", [
-            a(href: "", classes: "btn btn-primary join-item", [
+            a(href: "tel:6155826784", classes: "btn btn-primary join-item", [
               BootstrapIcon(iconName: "telephone-outbound-fill"),
               text("(615) 582 - 6784")
             ]),
-            a(href: "", classes: "btn btn-primary join-item", [
-              BootstrapIcon(iconName: "envelope-fill"),
-              text("jrmccasland3@gmail.com")
-            ]),
+            a(
+                href: "mailto:jrmccasland3@gmail.com",
+                classes: "btn btn-primary join-item",
+                [
+                  BootstrapIcon(iconName: "envelope-fill"),
+                  text("jrmccasland3@gmail.com")
+                ]),
             a(href: "", classes: "btn btn-primary join-item", [
               BootstrapIcon(iconName: "house-fill"),
               text("242 West Main Street #206, Hendersonville, TN")

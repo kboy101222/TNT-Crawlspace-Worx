@@ -10,7 +10,9 @@ class Header extends StatelessComponent {
       div(classes: "navbar-center", [
         img(
             src: "images/mid_tn_crawlspace_logo.svg",
-            classes: "md:w-full xs:w-[100%] mx-auto lg:h-[100px] h-[50px]")
+            classes: "md:w-full xs:w-[100%] mx-auto lg:h-[100px] h-[50px]",
+            alt: "Middle TN Crawlspace",
+            loading: MediaLoading.lazy)
       ]),
       div(classes: "navbar-end", []),
     ]);
